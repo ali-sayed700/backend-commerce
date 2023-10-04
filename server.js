@@ -18,6 +18,16 @@ const compression = require("compression");
 // compress all responses
 app.use(compression());
 
+const { CheckoutWebHook } = require("./controller/Order.Controller");
+
+// checkout webhook
+
+app.post(
+  "/checkout-webhook",
+  express.raw({ type: "application/json" }),
+  CheckoutWebHook
+);
+
 // # dotenv
 const dotenv = require("dotenv");
 
