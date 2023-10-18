@@ -20,6 +20,7 @@ exports.CreateReviewValidator = [
   check("product")
     .isMongoId()
     .withMessage("Not a valid id")
+    // validate if review created or not
     .custom(async (val, { req }) => {
       // console.log(req);
       const review = await Reviews.findOne({

@@ -106,9 +106,6 @@ exports.CheckOutSession = asyncHandler(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        // name: req.user.name,
-        // amount: totalOrderPrice * 100,
-        // currency: "egp",
         price_data: {
           currency: "egp",
           product_data: {

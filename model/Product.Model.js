@@ -84,7 +84,7 @@ const ProductSchema = new Schema(
   }
 );
 // using populate with virual >> populated virtual contains collect of documents from another collection
-// Population is the process of automatically replacing the specified paths in the document with document(s) from other collection(s). We may populate a single document
+// Population is the process of automatically replacing the specified paths in the document with document(s). We may populate a single document
 // **** it helps to make parent ref one to many
 ProductSchema.virtual("reviews", {
   ref: "Reviews",
