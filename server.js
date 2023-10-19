@@ -54,7 +54,8 @@ DbConnection();
 // # Middleware
 app.use(express.static(path.join(__dirname, "uploads")));
 // app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+// this is for  app secur  >> we limit size to prevent hacking from sending many req full of data
+app.use(express.json({ limit: "20kb" }));
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
